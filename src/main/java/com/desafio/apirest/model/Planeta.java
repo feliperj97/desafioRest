@@ -1,21 +1,23 @@
 package com.desafio.apirest.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection="planeta")
 public class Planeta {
 	@Id
-	private long id;
+	private String codigo;
 	private String nome;
-	private String clima;
 	private String terreno;
-	private long qtdFilmes;
-	public long getId() {
-		return id;
+	private String clima;
+	private String filmes;
+	public String getCodigo() {
+		return codigo;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 	public String getNome() {
 		return nome;
@@ -23,23 +25,24 @@ public class Planeta {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getClima() {
-		return clima;
-	}
-	public void setClima(String clima) {
-		this.clima = clima;
-	}
 	public String getTerreno() {
 		return terreno;
 	}
 	public void setTerreno(String terreno) {
 		this.terreno = terreno;
 	}
-	public long getQtdFilmes() {
-		return qtdFilmes;
+	public String getClima() {
+		return clima;
 	}
-	public void setQtdFilmes(long qtdFilmes) {
-		this.qtdFilmes = qtdFilmes;
+	public void setClima(String clima) {
+		this.clima = clima;
 	}
+	public String getFilmes() {
+		return filmes;
+	}
+	public void setFilmes(String filmes) {
+		this.filmes = filmes;
+	}
+	
 	
 }
