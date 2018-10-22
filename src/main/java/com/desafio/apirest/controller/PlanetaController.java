@@ -3,11 +3,11 @@ package com.desafio.apirest.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.desafio.apirest.model.Planeta;
@@ -20,14 +20,20 @@ public class PlanetaController {
 	@Autowired
 	PlanetaRepository planetaRepository;
 	
-	@GetMapping("/planetas")
+	@GetMapping("/planetas") //Listando todos os planetas
 	public List<Planeta> listaPlanetas(){
 		return planetaRepository.findAll();
 	}
 	
-	 @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	    public void create(@RequestBody Planeta planeta) {
+	
+	 @PostMapping("/planetas") //Incluindo novo planeta
+	 public void inserePlaneta(@RequestBody Planeta planeta) {
 	        planetaRepository.save(planeta);
 	    }
+	 
+	 @PutMapping("/planeta") //Atualizando planeta
+	 public Planeta editaPlaneta(@RequestBody Planeta planeta) {
+		 return planetaRepository.save(planeta);
+	 }
 	
 }
