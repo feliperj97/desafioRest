@@ -12,7 +12,7 @@ public class Planeta {
 	private String nome;
 	private String terreno;
 	private String clima;
-	private String filmes;
+	
 	public String getCodigo() {
 		return codigo;
 	}
@@ -37,12 +37,7 @@ public class Planeta {
 	public void setClima(String clima) {
 		this.clima = clima;
 	}
-	public String getFilmes() {
-		return filmes;
-	}
-	public void setFilmes(String filmes) {
-		this.filmes = filmes;
-	}
+	
 	
 	
 }
