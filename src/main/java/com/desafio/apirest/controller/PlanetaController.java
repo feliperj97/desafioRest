@@ -1,9 +1,11 @@
 package com.desafio.apirest.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +27,11 @@ public class PlanetaController {
 		return planetaRepository.findAll();
 	}
 	
-	
+	@GetMapping("/planeta/{codigo}")
+	public Optional<Planeta> listaPlaneta(@PathVariable String codigo){
+		return planetaRepository.findById(codigo);
+	}
+		
 	 @PostMapping("/planetas") //Incluindo novo planeta
 	 public void inserePlaneta(@RequestBody Planeta planeta) {
 	        planetaRepository.save(planeta);
@@ -35,5 +41,7 @@ public class PlanetaController {
 	 public Planeta editaPlaneta(@RequestBody Planeta planeta) {
 		 return planetaRepository.save(planeta);
 	 }
+	 
+	 
 	
 }
