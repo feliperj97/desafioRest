@@ -1,2 +1,2 @@
-API REST em desenvolvimento
-Tecnologias utilizadas: Java, SpringBoot, MongoDB
+#API REST
+*<br>Tecnologias utilizadas*: MongoDB, Java, SpringBoot
