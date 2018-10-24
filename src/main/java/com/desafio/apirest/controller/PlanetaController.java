@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.desafio.apirest.model.Planeta;
@@ -32,7 +34,7 @@ public class PlanetaController {
 	public Optional<Planeta> listaPlaneta(@PathVariable String codigo){
 		return planetaRepository.findById(codigo);
 	}
-		
+	
 	 @PostMapping("/planetas") //Incluindo novo planeta
 	 public void inserePlaneta(@RequestBody Planeta planeta) {
 	        planetaRepository.save(planeta);
@@ -43,11 +45,15 @@ public class PlanetaController {
 		 return planetaRepository.save(planeta);
 	 }
 	 
-	 @DeleteMapping("/planeta")
+	 @DeleteMapping("/planeta") //Deletando planeta
 	 public void deletaPlaneta(@RequestBody Planeta planeta) {
 		 planetaRepository.delete(planeta);
 	 }
 	 
+	 @DeleteMapping("/planeta/{codigo}") //Deletando pelo ID
+	 public void deletaPlanetaById(@PathVariable String codigo) {
+		 planetaRepository.deleteById(codigo);
+	 }
 	 
 	
 }
