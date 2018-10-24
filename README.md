@@ -8,7 +8,7 @@ Pré-requisitos:
 
 Para executar a API clone o repositório com o comando:
 ```sh
-git clone https://github.com/feliperj97/restDesafio
+git clone https://github.com/feliperj97/desafioRest
 ```
 **No arquivo `application.properties` configurar a conexão com o banco de dados**
 ## Tecnologias utilizadas
