@@ -1,8 +1,7 @@
 package com.desafio.apirest.model;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="planeta")
@@ -12,7 +11,15 @@ public class Planeta {
 	private String nome;
 	private String terreno;
 	private String clima;
+	@Transient
+	private int numFilmes;
 	
+	public int getNumFilmes() {
+		return numFilmes;
+	}
+	public void setNumFilmes(int numFilmes) {
+		this.numFilmes = numFilmes;
+	}
 	public String getCodigo() {
 		return codigo;
 	}

@@ -30,11 +30,15 @@ public class PlanetaController {
 		return planetaRepository.findAll();
 	}
 	
-	@GetMapping("/planeta/{codigo}") //Exibindo um único planeta
+	@GetMapping("/planeta/{codigo}") //Busca por ID
 	public Optional<Planeta> listaPlaneta(@PathVariable String codigo){
 		return planetaRepository.findById(codigo);
 	}
 	
+	@GetMapping("/planetas/search") //Busca por nome
+	Planeta findByName(@RequestParam(value="name", required=true) String name){
+		return planetaRepository.findByNome(name);
+	}
 	 @PostMapping("/planetas") //Incluindo novo planeta
 	 public void inserePlaneta(@RequestBody Planeta planeta) {
 	        planetaRepository.save(planeta);
