@@ -15,10 +15,15 @@ git clone https://github.com/feliperj97/desafioRest
 * `MongoDB`
 * `SpringBoot`
 * `Java`
-  
+## EndPoints
+- GET /api/planetas - Lista todos os planetas
+- GET /api/planeta/{codigo} - Lista um planeta buscando pelo codigo
+- GET /api/planeta/search=nome - Busca planeta pelo nome
+- POST /api/planetas - Adiciona um planeta
+- PUT /api/planeta - Atualiza um planeta
+- DELETE /api/planeta/ - Deleta planeta
+- DELETE /api/planeta/{codigo} - Deleta planeta pelo ID
 
-### Todos
+### ToDos
 
- - Escrever testes
- - Implementar busca por nome
  - Implementar SWAPI
